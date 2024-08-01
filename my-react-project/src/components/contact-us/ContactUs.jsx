@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 export default function ContactUs() {
     return (
         <div>
@@ -23,15 +26,15 @@ export default function ContactUs() {
                                     <input type="text" className="mail_text" placeholder="Email" name="Email" />
                                     <textarea className="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
                                     <div className="btn_main">
-                                        <div className="send_bt active"><a href="#">Send Now</a></div>
-                                        <div className="map_bt"><a href="#" id="showMap">Map</a></div>
+                                        <div className="send_bt active"><Link to="#">Send Now</Link></div>
+                                        <div className="map_bt"><Link to="#" id="showMap">Map</Link></div>
                                     </div>
                                 </form>
                                 {/* <div className="map_main map_container">
                                     <div className="map-responsive">
                                         <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="368" frameBorder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
                                         <div className="btn_main">
-                                            <div className="map_bt d-flex justify-content-center w-100 map_center"><a href="#" id="showForm">Form</a></div>
+                                            <div className="map_bt d-flex justify-content-center w-100 map_center"><Link to="#" id="showForm">Form</Link></div>
                                         </div>
                                     </div>
                                 </div> */}

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Newsletter() {
     return (
         <div className="newsletter_section layout_padding">
@@ -12,7 +14,7 @@ export default function Newsletter() {
                 </div>
                 <form action="">
                     <textarea className="email_bt" placeholder="Enter Your Email" rows="5" id="comment" name="Massage"></textarea>
-                    <div className="subscribe_bt"><a href="#">Subscribe</a></div>
+                    <div className="subscribe_bt"><Link to="#">Subscribe</Link></div>
                 </form>
             </div>
         </div>

@@ -1,6 +1,9 @@
-import { useLocation } from "react-router-dom";
+
+
+import { useLocation, Link } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import Banner from '../banner/Banner';
 
@@ -14,52 +17,58 @@ export default function Header() {
 
             <div className="container-fluid">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="navbar-brand" href="/"><img src="images/logo.png" /></a>
+                    <Link className="navbar-brand" to="/"><img src="images/logo.png" /></Link>
 
                     <div className='mobile-nav'>
                         <DropdownButton id="dropdown-basic-button" title="Menu" variant="Secondary">
                             <Dropdown.Item href="/">Home</Dropdown.Item>
                             <Dropdown.Item href="/properties">Property</Dropdown.Item>
-                            <Dropdown.Item href="/about">About</Dropdown.Item>
+                            {/* <Dropdown.Item href="/about">About</Dropdown.Item> */}
                             {/* <Dropdown.Item href="#/action-4">Testimonial</Dropdown.Item> */}
                             <Dropdown.Item href="/blog">Blog</Dropdown.Item>
                             <Dropdown.Item href="/contact-us">Contact Us</Dropdown.Item>
-                            <Dropdown.Item href="/login"><i className="fa fa-user" style={{ paddingRight: "5px" }}></i>Login</Dropdown.Item>
-                            <Dropdown.Item href="/register"><i className="fa fa-user" style={{ paddingRight: "5px" }}></i>Register</Dropdown.Item>
-                            <Dropdown.Item href="/logout"><i className="fa fa-user" style={{ paddingRight: "5px" }}></i>Logout</Dropdown.Item>
+                            <NavDropdown.Divider />
+                            <Dropdown.Item href="/login"><i className="fa fa-user" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Login</Dropdown.Item>
+                            <Dropdown.Item href="/register"><i className="fa fa-user" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Register</Dropdown.Item>
+                            <Dropdown.Item href="/create"><i className="fa fa-pencil-square-o" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Add Offer</Dropdown.Item>
+                            <NavDropdown.Divider />
+                            <Dropdown.Item href="/logout"><i className="fa fa-sign-out" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Logout</Dropdown.Item>
                         </DropdownButton>
                     </div>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item active">
-                                <a className="nav-link" href="/">Home</a>
+                                <Link className="nav-link" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/properties">Properties</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/about">About</a>
+                                <Link className="nav-link" to="/properties">Properties</Link>
                             </li>
                             {/* <li className="nav-item">
-                                <a className="nav-link" href="testimonial.html">Testimonial</a>
+                                <Link className="nav-link" to="/about">About</Link>
+                            </li> */}
+                            {/* <li className="nav-item">
+                                <Link className="nav-link" to="testimonial.html">Testimonial</Link>
                             </li> */}
                             <li className="nav-item">
-                                <a className="nav-link" href="/blog">Blog</a>
+                                <Link className="nav-link" to="/blog">Blog</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/contact-us">Contact Us</a>
+                                <Link className="nav-link" to="/contact-us">Contact Us</Link>
                             </li>
                         </ul>
                         <form className="form-inline my-2 my-lg-0">
                             <div className="user-btn">
                                 <span>
-                                    <a href="/login"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Login</a>
+                                    <Link to="/login"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Login</Link>
                                 </span>
                                 <span>
-                                    <a href="/register"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Register</a>
+                                    <Link to="/register"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Register</Link>
                                 </span>
                                 <span>
-                                    <a href="/logout"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Logout</a>
+                                    <Link to="/create"><span className="user_icon"><i className="fa fa-pencil-square-o" aria-hidden="true"></i></span>Add Offer</Link>
+                                </span>
+                                <span>
+                                    <Link to="/logout"><span className="user_icon"><i className="fa fa-sign-out" aria-hidden="true"></i></span>Logout</Link>
                                 </span>
                             </div>
                         </form>
@@ -67,9 +76,7 @@ export default function Header() {
                 </nav>
             </div>
 
-            {/* <!-- banner section start -->  */}
             {showBanner && <Banner />}
-            {/* <!-- banner section end --> */}
         </div>
 
     );

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function SelectBox() {
     return (
 
@@ -31,7 +33,7 @@ export default function SelectBox() {
                             </select>
                         </div>
                         <div className="col-lg-3 select-outline">
-                            <div className="find_btn"><a href="#">Find Now</a></div>
+                            <div className="find_btn"><Link to="#">Find Now</Link></div>
                         </div>
                     </div>
                 </div>

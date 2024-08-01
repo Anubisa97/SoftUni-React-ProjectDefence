@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 export default function Reviews() {
     return (
         <div className="customer_section layout_padding">
@@ -77,12 +80,12 @@ export default function Reviews() {
                         </div>
                     </div>
                 </div>
-                <a className="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                <Link className="carousel-control-prev" to="#my_slider" role="button" data-slide="prev">
                     <i className="fa fa-arrow-left"></i>
-                </a>
-                <a className="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                </Link>
+                <Link className="carousel-control-next" to="#my_slider" role="button" data-slide="next">
                     <i className="fa fa-arrow-right"></i>
-                </a>
+                </Link>
             </div>
         </div>
     );
