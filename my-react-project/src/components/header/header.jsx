@@ -1,82 +1,74 @@
+import { useLocation } from "react-router-dom";
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
+import Banner from '../banner/Banner';
 
 export default function Header() {
+    const { pathname } = useLocation();
+    const showBanner = pathname === "/"
+
     return (
         <div className="header_section">
+
+
             <div className="container-fluid">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="navbar-brand" href="index.html"><img src="images/logo.png" /></a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+                    <a className="navbar-brand" href="/"><img src="images/logo.png" /></a>
+
+                    <div className='mobile-nav'>
+                        <DropdownButton id="dropdown-basic-button" title="Menu" variant="Secondary">
+                            <Dropdown.Item href="/">Home</Dropdown.Item>
+                            <Dropdown.Item href="/properties">Property</Dropdown.Item>
+                            <Dropdown.Item href="/about">About</Dropdown.Item>
+                            {/* <Dropdown.Item href="#/action-4">Testimonial</Dropdown.Item> */}
+                            <Dropdown.Item href="/blog">Blog</Dropdown.Item>
+                            <Dropdown.Item href="/contact-us">Contact Us</Dropdown.Item>
+                            <Dropdown.Item href="/login"><i className="fa fa-user" style={{ paddingRight: "5px" }}></i>Login</Dropdown.Item>
+                            <Dropdown.Item href="/register"><i className="fa fa-user" style={{ paddingRight: "5px" }}></i>Register</Dropdown.Item>
+                            <Dropdown.Item href="/logout"><i className="fa fa-user" style={{ paddingRight: "5px" }}></i>Logout</Dropdown.Item>
+                        </DropdownButton>
+                    </div>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item active">
-                                <a className="nav-link" href="index.html">Home</a>
+                                <a className="nav-link" href="/">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="about.html">About</a>
+                                <a className="nav-link" href="/properties">Properties</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="property.html">Property</a>
+                                <a className="nav-link" href="/about">About</a>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link" href="testimonial.html">Testimonial</a>
+                            </li> */}
+                            <li className="nav-item">
+                                <a className="nav-link" href="/blog">Blog</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="blog.html">Blog</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="contact.html">Contact Us</a>
+                                <a className="nav-link" href="/contact-us">Contact Us</a>
                             </li>
                         </ul>
                         <form className="form-inline my-2 my-lg-0">
-                            <div className="login_bt">
-                                <ul>
-                                    <li><a href="#"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Login</a></li>
-                                    <li><a href="#"><i className="fa fa-search" aria-hidden="true"></i></a></li>
-                                </ul>
+                            <div className="user-btn">
+                                <span>
+                                    <a href="/login"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Login</a>
+                                </span>
+                                <span>
+                                    <a href="/register"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Register</a>
+                                </span>
+                                <span>
+                                    <a href="/logout"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Logout</a>
+                                </span>
                             </div>
                         </form>
                     </div>
                 </nav>
             </div>
+
             {/* <!-- banner section start -->  */}
-            <div className="banner_section layout_padding">
-                <div className="container">
-                    <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
-                        <div className="carousel-inner">
-                            <div className="carousel-item active">
-                                <div className="row">
-                                    <div className="col-sm-12">
-                                        <h1 className="banner_taital">Find A Property</h1>
-                                        <p className="banner_text">page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to</p>
-                                        <div className="started_text"><a href="#">Contact Us</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="row">
-                                    <div className="col-sm-12">
-                                        <h1 className="banner_taital">Find A Property</h1>
-                                        <p className="banner_text">page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to</p>
-                                        <div className="started_text"><a href="#">Contact Us</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="row">
-                                    <div className="col-sm-12">
-                                        <h1 className="banner_taital">Find A Property</h1>
-                                        <p className="banner_text">page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to</p>
-                                        <div className="started_text"><a href="#">Contact Us</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {showBanner && <Banner />}
             {/* <!-- banner section end --> */}
         </div>
 

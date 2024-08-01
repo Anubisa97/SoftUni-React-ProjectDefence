@@ -17,6 +17,12 @@
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 
+@media (min-width: 991px) {
+    .mobile-nav {
+        display: none !important;
+    }
+}
+
 * {
     box-sizing: border-box !important;
     transition: ease all 0.5s;
@@ -267,12 +273,38 @@ button {
 .navbar {
     padding: 15px 15px;
 }
+
+.mobile-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px;
+}
 .user_icon{
     padding-right: 15px;
 }
 
+.user-btn {
+    display: flex;
+}
+
+.user-btn a {
+    font-size: 17px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 0px 0px 0px 50px;
+}
+
+.user-btn a:hover{
+    color: #252525;
+}
+
 .login_bt {
     width: 210px;
+    float: left;
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 0px 0px 0px 50px;
 }
 
 .login_bt ul{
@@ -382,6 +414,8 @@ z-index: 2 !important;
 .nice-select {
     width: 100%;
     background-color: #ffffff;
+    border-width: 0px; 
+    height: 50px;
     box-shadow: 0px 2px 16px 0px #eaeaea !important;
 }
 
@@ -975,7 +1009,7 @@ hr.customer_border_main {
 .contact_section {
     width: 100%;
     float: left;
-    padding-bottom: 90px;
+    padding-bottom: 30px;
 }
 
 .contact_taital_main{
@@ -1001,7 +1035,7 @@ hr.contact_border_main {
 .contact_section_2 {
     width: 100%;
     float: left;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
  .contact_section .map_form_container .map_container { display: none; } 
