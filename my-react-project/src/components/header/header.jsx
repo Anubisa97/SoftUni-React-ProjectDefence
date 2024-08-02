@@ -28,7 +28,7 @@ export default function Header() {
                             <Dropdown.Item href="/blog">Blog</Dropdown.Item>
                             <Dropdown.Item href="/contact-us">Contact Us</Dropdown.Item>
                             <NavDropdown.Divider />
-                            <Dropdown.Item href="/login"><i className="fa fa-user" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Login</Dropdown.Item>
+                            <Dropdown.Item href="/login"><i className="fa fa-user" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Log in</Dropdown.Item>
                             <Dropdown.Item href="/register"><i className="fa fa-user" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Register</Dropdown.Item>
                             <Dropdown.Item href="/create"><i className="fa fa-pencil-square-o" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Add Offer</Dropdown.Item>
                             <NavDropdown.Divider />
@@ -60,7 +60,7 @@ export default function Header() {
                         <form className="form-inline my-2 my-lg-0">
                             <div className="user-btn">
                                 <span>
-                                    <Link to="/login"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Login</Link>
+                                    <Link to="/login"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Log in</Link>
                                 </span>
                                 <span>
                                     <Link to="/register"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Register</Link>

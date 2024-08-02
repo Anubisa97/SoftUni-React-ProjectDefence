@@ -1,18 +1,12 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { getOne } from "../../../api/propertiesAPI";
+
 import { useParams } from "react-router";
+import { useGetOneProperty } from "../../../hooks/useProperties";
 
 
 
 export default function PropertyDetails() {
-    const [property, setProperty] = useState([]);
     const { propertyId } = useParams()
-
-    useEffect(() => {
-        getOne(propertyId)
-            .then(property => setProperty(property))
-    }, [])
+    const [property] = useGetOneProperty(propertyId)
 
     return (
         <div className="details_box">

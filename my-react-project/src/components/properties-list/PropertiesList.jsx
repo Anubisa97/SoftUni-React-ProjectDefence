@@ -1,17 +1,11 @@
-import { useEffect, useState } from "react";
 
-import { getAll } from "../../api/propertiesAPI";
 
 import PropertyCard from "./property-card/PropertyCard";
+import { useGetAllProperties } from "../../hooks/useProperties";
 
 
 export default function PropertiesList() {
-    const [properties, setProperties] = useState([])
-
-    useEffect(() => {
-        getAll()
-            .then(result => setProperties(result))
-    }, [])
+    const [properties] = useGetAllProperties()
 
     return (
         <div className="Properties_section layout_padding">
@@ -27,12 +21,7 @@ export default function PropertiesList() {
                 <div className="Properties_section_2">
                     <div className="row">
                         {properties.map(property => <PropertyCard key={property._id} {...property} />)}
-                        {/* <PropertyCard />
-                        <PropertyCard />
-                        <PropertyCard />
-                        <PropertyCard />
-                        <PropertyCard />
-                        <PropertyCard /> */}
+
                     </div>
                 </div>
             </div>
