@@ -1,9 +1,30 @@
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useLogin } from '../../hooks/useAuth';
+import { useForm } from '../../hooks/useForm';
+import { useNavigate } from 'react-router';
 
+const initialValues = { email: '', password: '' }
 
 export default function Login() {
+    const login = useLogin()
+    const navigate = useNavigate()
+
+    const loginHandler = async ({ email, password }) => {
+        try {
+            await login(email, password)
+            navigate('/')
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    const {
+        values,
+        changeHandler,
+        submitHandler
+    } = useForm(initialValues, loginHandler)
+
     return (
         <div>
             <div className="contact_section " />
@@ -19,30 +40,39 @@ export default function Login() {
             </div>
             <div className="container-fluid">
                 <div className="contact_section_2">
-
                     <div className="row">
                         <div className="col-md-6" style={{ paddingRight: "100px" }}>
                             <div className="mail_section map_form_container">
-                                <Form>
+                                <Form onSubmit={submitHandler}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Email address</Form.Label>
-                                        <Form.Control className='nice-select' type="email" placeholder="Enter email" />
+                                        <Form.Control
+                                            className='nice-select'
+                                            type="email"
+                                            name="email"
+                                            value={values.email}
+                                            onChange={changeHandler}
+                                            placeholder="Enter email"
+                                        />
                                         <Form.Text className="text-muted">
                                             We`&apos;`ll never share your email with anyone else.
                                         </Form.Text>
                                     </Form.Group>
-
                                     <Form.Group style={{ marginTop: "20px" }} className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Password</Form.Label>
-                                        <Form.Control className='nice-select' type="password" placeholder="Password" />
+                                        <Form.Control
+                                            className='nice-select'
+                                            type="password"
+                                            name='password'
+                                            value={values.password}
+                                            onChange={changeHandler}
+                                            placeholder="Password"
+                                        />
                                     </Form.Group>
                                     <Button style={{ marginTop: "15px" }} variant="warning" size="lg" type="submit">
                                         Login
                                     </Button>
                                 </Form>
-
-
-
                             </div>
                         </div>
                         <div className="col-md-6">

@@ -21,7 +21,7 @@ export default function Create() {
                 <div className="contact_section_2">
                     <div className="row">
                         <div className="col-md-6">
-                            <div className="mail_section map_form_container">
+                            <div className="mail_section map_form_container" style={{ paddingRight: "50px" }}>
 
                                 <Form>
                                     <Row className="mb-3">

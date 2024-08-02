@@ -19,7 +19,7 @@ export default function Register() {
                 <div className="contact_section_2">
                     <div className="row">
                         <div className="col-md-6">
-                            <div className="mail_section map_form_container">
+                            <div className="mail_section map_form_container" style={{ paddingRight: "100px" }}>
                                 <Form>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Email address</Form.Label>
@@ -28,19 +28,20 @@ export default function Register() {
                                             We`&apos;`ll never share your email with anyone else.
                                         </Form.Text>
                                     </Form.Group>
-
                                     <Form.Group style={{ marginTop: "15px" }} className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Password</Form.Label>
                                         <Form.Control className='nice-select' type="password" placeholder="Password" />
                                     </Form.Group>
-                                    <Form.Group style={{ marginTop: "15px" }} className="mb-3" controlId="formBasicPassword">
+                                    <Form.Group style={{ marginTop: "15px" }} className="mb-3" controlId="formBasicRePassword">
                                         <Form.Label>Repeat Password</Form.Label>
                                         <Form.Control className='nice-select' type="password" placeholder="Password" />
                                     </Form.Group>
-                                    <Button style={{ marginTop: "15px" }} variant="warning" size="lg" type="submit">
+                                    <Button style={{ marginTop: "20px" }} variant="warning" size="lg" type="submit">
                                         Register
                                     </Button>
                                 </Form>
+
+
                             </div>
                         </div>
                         <div className="col-md-6">
@@ -52,3 +53,4 @@ export default function Register() {
         </div>
     );
 }
+
