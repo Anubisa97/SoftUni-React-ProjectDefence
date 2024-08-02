@@ -1,22 +1,22 @@
 
-import Blog from "../blog/Blog";
-import ContactUs from "../contact-us/ContactUs";
-import Feature from "../feature/feature";
-import Newsletter from "../newsletter/Newsletter";
+// import Blog from "../blog/Blog";
+// import ContactUs from "../contact-us/ContactUs";
+// import Feature from "../feature/feature";
+// import Newsletter from "../newsletter/Newsletter";
+// import Reviews from "../reviews/Reviews";
 import PropertiesList from "../properties-list/PropertiesList";
-import Reviews from "../reviews/Reviews";
 import SelectBox from "../select-box/SelectBox";
 
 export default function Home() {
     return (
         <div>
             <SelectBox />
-            <Feature />
+            {/* <Feature /> */}
             <PropertiesList />
-            <Blog />
+            {/* <Blog />
             <Newsletter />
             <Reviews />
-            <ContactUs />
+            <ContactUs /> */}
         </div>
     );
 }

@@ -8,8 +8,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Banner from '../banner/Banner';
 
 export default function Header() {
-    const { pathname } = useLocation();
-    const showBanner = pathname === "/"
+    const { pathname: pathName } = useLocation();
+    const showBanner = pathName === "/"
 
     return (
         <div className="header_section">
@@ -37,10 +37,11 @@ export default function Header() {
                     </div>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item active">
+
+                            <li className={"nav-item" + (pathName === "/" && "active")}>
                                 <Link className="nav-link" to="/">Home</Link>
                             </li>
-                            <li className="nav-item">
+                            <li className={"nav-item" + (pathName === "/properties" && "active")}>
                                 <Link className="nav-link" to="/properties">Properties</Link>
                             </li>
                             {/* <li className="nav-item">
@@ -49,10 +50,10 @@ export default function Header() {
                             {/* <li className="nav-item">
                                 <Link className="nav-link" to="testimonial.html">Testimonial</Link>
                             </li> */}
-                            <li className="nav-item">
+                            <li className={"nav-item" + (pathName === "/blog" && "active")}>
                                 <Link className="nav-link" to="/blog">Blog</Link>
                             </li>
-                            <li className="nav-item">
+                            <li className={"nav-item" + (pathName === "/contact-us" && "active")}>
                                 <Link className="nav-link" to="/contact-us">Contact Us</Link>
                             </li>
                         </ul>
@@ -81,3 +82,18 @@ export default function Header() {
 
     );
 }
+
+// TODO Create property
+// Create latest properties list on home page
+// List all properties
+// Authentication
+// Edit and Delete properties
+// Route guard
+//
+// CAN DO
+// List user properties
+// List liked properties
+// Sort properties
+//
+//
+// 

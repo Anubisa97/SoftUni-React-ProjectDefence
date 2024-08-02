@@ -40,10 +40,10 @@ export default function Create() {
                                                 Type of property</Form.Label>
                                             <Form.Select className='nice-select '>
                                                 <option>...</option>
-                                                <option value="1">1 room</option>
-                                                <option value="2">2 room</option>
-                                                <option value="3">3 room</option>
-                                                <option value="4">4 room</option>
+                                                <option value="1">1 ROOM APARTMENT</option>
+                                                <option value="2">2 ROOM APARTMENT</option>
+                                                <option value="3">3 ROOM APARTMENT</option>
+                                                <option value="4">4 ROOM APARTMENT</option>
                                                 <option value="5">MAISONETTE</option>
                                                 <option value="6">OFFICE</option>
                                                 <option value="7">STUDIO, ATTIC</option>
@@ -84,17 +84,18 @@ export default function Create() {
                                         </Form.Group>
 
                                     </Row>
-
+                                    <Form.Group className="mb-3" controlId="formGridAddress1">
+                                        <Form.Label>Street name:</Form.Label>
+                                        <Form.Control className='nice-select' placeholder="bul.Vitosha" />
+                                    </Form.Group>
                                     <Form.Group className="mb-3" controlId="formGridAddress1">
                                         <Form.Label>Square meters:</Form.Label>
                                         <Form.Control className='nice-select' placeholder="154" />
                                     </Form.Group>
-
                                     <Form.Group className="mb-3" controlId="formGridAddress1">
                                         <Form.Label>Price in EUR:</Form.Label>
                                         <Form.Control className='nice-select' placeholder="250000" />
                                     </Form.Group>
-
                                     <Form.Group className="mb-3" controlId="formGridAddress1">
                                         <Form.Label>Phone number</Form.Label>
                                         <Form.Control className='nice-select' placeholder="088..." />

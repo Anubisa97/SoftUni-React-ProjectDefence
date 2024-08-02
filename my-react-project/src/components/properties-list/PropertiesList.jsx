@@ -1,16 +1,17 @@
-import { useEffect } from "react";
-import PropertyCard from "./property-card/PropertyCard";
-import * as request from "../../api/requester"
+import { useEffect, useState } from "react";
 
-const BASE_URL = "http://localhost:3030/"
+import { getAll } from "../../api/propertiesAPI";
+
+import PropertyCard from "./property-card/PropertyCard";
+
 
 export default function PropertiesList() {
+    const [properties, setProperties] = useState([])
+
     useEffect(() => {
-        (async () => {
-            const propertiesResult = await request.get(BASE_URL)
-            console.log(propertiesResult);
-        })()
-    })
+        getAll()
+            .then(result => setProperties(result))
+    }, [])
 
     return (
         <div className="Properties_section layout_padding">
@@ -25,12 +26,13 @@ export default function PropertiesList() {
                 </div>
                 <div className="Properties_section_2">
                     <div className="row">
+                        {properties.map(property => <PropertyCard key={property._id} {...property} />)}
+                        {/* <PropertyCard />
                         <PropertyCard />
                         <PropertyCard />
                         <PropertyCard />
                         <PropertyCard />
-                        <PropertyCard />
-                        <PropertyCard />
+                        <PropertyCard /> */}
                     </div>
                 </div>
             </div>
