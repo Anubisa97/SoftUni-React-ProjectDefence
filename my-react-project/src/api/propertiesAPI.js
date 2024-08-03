@@ -1,6 +1,6 @@
 import * as request from "./requester";
 
-const BASE_URL = "http://localhost:3030/jsonstore/properties";
+const BASE_URL = "http://localhost:3030/data/properties";
 
 export const getAll = async () => {
   const result = await request.get(BASE_URL);
@@ -9,4 +9,6 @@ export const getAll = async () => {
   return properties;
 };
 
-export const getOne = async (propertyId) => request.get(`${BASE_URL}/${propertyId}`);
+export const getOne = (propertyId) => request.get(`${BASE_URL}/${propertyId}`);
+
+export const createProperty = (propertyData) => request.post(BASE_URL, propertyData);

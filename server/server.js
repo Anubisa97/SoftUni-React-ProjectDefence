@@ -1313,19 +1313,33 @@
   };
   var seedData = {
     properties: {
-      "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        name: "Easy Lasagna",
+      "82f33588-dcda-4839-8557-4d72037394d2": {
         type_offer: "For Sale",
         type_property: "4 room",
         city: "Sofia",
         district: "Iztok",
-        area: "180",
-        price: "149000",
+        street: "bul.Tsarigradsko shose",
+        area: 180,
+        price: 149000,
         number: "0885182045",
         img_url: "https://www.thespruce.com/thmb/9T1pfeh6aJr_qah3-SDME9oBrow=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/DesireeBurns_Boston_1Franklin_1-1714de8139854b3bbc2ffcdbfd333157.jpg",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore sint, ipsa suscipit perferendis omnis earum voluptates eligendi nesciunt cum in quae velit officia ipsam ducimus quaerat quam voluptatum! Sed, obcaecati. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem error alias incidunt, laborum quibusdam accusantium rerum velit sequi officiis doloremque repellendus vero molestias nesciunt placeat reiciendis ullam voluptas cumque magnam?",
         _createdOn: 1613551279012,
+        _id: "82f33588-dcda-4839-8557-4d72037394d2",
+      },
+      "e9e979ad-2586-4ad1-892b-8cf2f6fb62ec": {
+        type_offer: "For Rent",
+        type_property: "OFFICE",
+        city: "Sofia",
+        district: "Banishora",
+        street: "bul.Slivnitsa",
+        area: 95,
+        price: 800,
+        number: "0885182854",
+        img_url: "https://www.decorilla.com/online-decorating/wp-content/uploads/2022/03/Modern-Office-Interior-with-Open-Floor-Plan-scaled.jpeg",
+        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore sint, ipsa suscipit perferendis omnis earum voluptates eligendi nesciunt cum in quae velit officia ipsam ducimus quaerat quam voluptatum! Sed, obcaecati. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem error alias incidunt, laborum quibusdam accusantium rerum velit sequi officiis doloremque repellendus vero molestias nesciunt placeat reiciendis ullam voluptas cumque magnam?",
+        _createdOn: 1613551279012,
+        _id: "e9e979ad-2586-4ad1-892b-8cf2f6fb62ec",
       },
     },
     recipes: {

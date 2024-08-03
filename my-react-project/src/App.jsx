@@ -27,7 +27,7 @@ function App() {
     email: authState.email,
     accessToken: authState.accessToken,
     isAuthenticated: !!authState.email,
-    changeAuthState
+    changeAuthState,
   }
 
   return (

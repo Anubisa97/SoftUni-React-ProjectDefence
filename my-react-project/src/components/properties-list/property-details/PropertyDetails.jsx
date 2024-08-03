@@ -18,7 +18,7 @@ export default function PropertyDetails() {
                         <span>{property.area} m<sup>2</sup></span>
                     </h2>
                     <div className="area_main">
-                        <h3 className="details_location"><i className="location_icon fa fa-map-marker offer_icon" ></i><span>{property.city}, {property.district}</span></h3>
+                        <h3 className="details_location"><i className="location_icon fa fa-map-marker offer_icon" ></i><span>{property.city}, {property.district}, {property.street}.</span></h3>
                         <div className="details_rate_text" ><span>{property.price} EUR</span></div>
                     </div>
 
