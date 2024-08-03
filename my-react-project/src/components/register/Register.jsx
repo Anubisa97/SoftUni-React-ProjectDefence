@@ -57,6 +57,7 @@ export default function Register() {
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Email address</Form.Label>
                                         <Form.Control
+                                            required
                                             className='nice-select'
                                             type="email"
                                             name='email'
@@ -70,6 +71,7 @@ export default function Register() {
                                     <Form.Group style={{ marginTop: "15px" }} className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Password</Form.Label>
                                         <Form.Control
+                                            required
                                             className='nice-select'
                                             type="password"
                                             name='password'
@@ -80,6 +82,7 @@ export default function Register() {
                                     <Form.Group style={{ marginTop: "15px" }} className="mb-3" controlId="formBasicRePassword">
                                         <Form.Label>Repeat Password</Form.Label>
                                         <Form.Control
+                                            required
                                             className='nice-select'
                                             type="password"
                                             name='rePassword'

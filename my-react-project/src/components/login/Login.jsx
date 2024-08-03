@@ -4,10 +4,13 @@ import Form from 'react-bootstrap/Form';
 import { useLogin } from '../../hooks/useAuth';
 import { useForm } from '../../hooks/useForm';
 import { useNavigate } from 'react-router';
+import { useState } from 'react';
+import Error from '../error/Error';
 
 const initialValues = { email: '', password: '' }
 
 export default function Login() {
+    const [error, setError] = useState('')
     const login = useLogin()
     const navigate = useNavigate()
 
@@ -16,7 +19,7 @@ export default function Login() {
             await login(email, password)
             navigate('/')
         } catch (error) {
-            console.error(error);
+            setError(error.message)
         }
     }
     const {
@@ -30,6 +33,7 @@ export default function Login() {
             <div className="contact_section " />
             <div className="container">
                 <div className="row">
+                    {error && <Error errorMessage={error} />}
                     <div className="col-sm-12">
                         <div className="contact_taital_main">
                             <h1 className="contact_taital">Login</h1>
@@ -47,6 +51,7 @@ export default function Login() {
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Email address</Form.Label>
                                         <Form.Control
+                                            required
                                             className='nice-select'
                                             type="email"
                                             name="email"
@@ -61,6 +66,7 @@ export default function Login() {
                                     <Form.Group style={{ marginTop: "20px" }} className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Password</Form.Label>
                                         <Form.Control
+                                            required
                                             className='nice-select'
                                             type="password"
                                             name='password'

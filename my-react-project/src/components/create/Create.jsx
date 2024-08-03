@@ -65,6 +65,7 @@ export default function Create() {
                                             <Form.Label>
                                                 Type of offer</Form.Label>
                                             <Form.Select
+                                                required
                                                 name='type_offer'
                                                 value={values.type_offer}
                                                 onChange={changeHandler}
@@ -79,6 +80,7 @@ export default function Create() {
                                             <Form.Label>
                                                 Type of property</Form.Label>
                                             <Form.Select
+                                                required
                                                 name='type_property'
                                                 value={values.type_property}
                                                 onChange={changeHandler}
@@ -109,6 +111,7 @@ export default function Create() {
                                             <Form.Label>
                                                 City</Form.Label>
                                             <Form.Select
+                                                required
                                                 name='city'
                                                 value={values.city}
                                                 onChange={changeHandler}
@@ -126,6 +129,7 @@ export default function Create() {
                                             <Form.Label>
                                                 District</Form.Label>
                                             <Form.Select
+                                                required
                                                 name='district'
                                                 value={values.district}
                                                 onChange={changeHandler}
@@ -143,6 +147,7 @@ export default function Create() {
                                     <Form.Group className="mb-3" controlId="formGridAddress1">
                                         <Form.Label>Street name:</Form.Label>
                                         <Form.Control
+                                            required
                                             className='nice-select'
                                             name='street'
                                             value={values.street}
@@ -152,6 +157,7 @@ export default function Create() {
                                     <Form.Group className="mb-3" controlId="formGridAddress1">
                                         <Form.Label>Square meters:</Form.Label>
                                         <Form.Control
+                                            required
                                             className='nice-select'
                                             name='area'
                                             value={values.area}
@@ -161,6 +167,7 @@ export default function Create() {
                                     <Form.Group className="mb-3" controlId="formGridAddress1">
                                         <Form.Label>Price in EUR:</Form.Label>
                                         <Form.Control
+                                            required
                                             className='nice-select'
                                             name='price'
                                             value={values.price}
@@ -170,6 +177,7 @@ export default function Create() {
                                     <Form.Group className="mb-3" controlId="formGridAddress1">
                                         <Form.Label>Phone number</Form.Label>
                                         <Form.Control
+                                            required
                                             className='nice-select'
                                             name='number'
                                             value={values.number}
@@ -179,6 +187,7 @@ export default function Create() {
                                     <Form.Group style={{ marginTop: "20px" }} className="mb-3" controlId="formBasicText">
                                         <Form.Label>Picture URL</Form.Label>
                                         <Form.Control
+                                            required
                                             className='nice-select'
                                             name='img_url'
                                             value={values.img_url}
@@ -188,6 +197,7 @@ export default function Create() {
                                     <Form.Group style={{ marginTop: "20px" }} className="mb-3" controlId="formBasicText">
                                         <Form.Label>Description</Form.Label>
                                         <Form.Control
+                                            required
                                             as="textarea"
                                             rows={5}
                                             className='nice-select'
