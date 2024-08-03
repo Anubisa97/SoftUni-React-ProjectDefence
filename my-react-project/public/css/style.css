@@ -723,6 +723,13 @@ hr.border_main {
     color: #3c3c3c;
 }
 
+.modify_btns {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px 10px 0px;
+}
+
 .offer_icon {
     padding-right: 5px;
 }

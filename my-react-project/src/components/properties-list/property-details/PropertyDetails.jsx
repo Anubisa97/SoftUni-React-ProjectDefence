@@ -1,6 +1,7 @@
 
 import { useParams } from "react-router";
 import { useGetOneProperty } from "../../../hooks/useProperties";
+import Button from "react-bootstrap/esm/Button";
 
 
 
@@ -25,6 +26,11 @@ export default function PropertyDetails() {
                     <div className="area_main" style={{ display: "block" }}>
                         <h3 className="details_description"><span>Description:</span></h3>
                         <h3 className="details_location"><span>{property.description}</span></h3>
+                    </div>
+                    <div className="modify_btns">
+                        <Button variant="primary">Like</Button>
+                        <Button variant="success">Edit</Button>
+                        <Button variant="danger">Delete</Button>
                     </div>
                 </div>
             </div>
