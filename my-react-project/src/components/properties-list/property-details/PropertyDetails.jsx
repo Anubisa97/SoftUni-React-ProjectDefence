@@ -1,6 +1,4 @@
-import { useParams } from "react-router";
-
-import { useNavigate } from 'react-router';
+import { useParams, useNavigate } from "react-router";
 
 import { useGetOneProperty } from "../../../hooks/useProperties";
 import Button from "react-bootstrap/esm/Button";
@@ -14,16 +12,18 @@ export default function PropertyDetails() {
     const { propertyId } = useParams();
     const [property] = useGetOneProperty(propertyId);
 
-    const isOwner = property._ownerId === userId;
+    const isOwner = property._ownerId && property._ownerId === userId;
 
     const propertyDeleteHandler = async () => {
-        try {
-            await removeProperty(propertyId)
+        if (window.confirm("Please confirm if you want to delete the property")) {
+            try {
+                await removeProperty(propertyId)
 
-            navigate('/')
-        } catch (error) {
-            console.error(error);
+                navigate('/')
+            } catch (error) {
+                console.error(error);
 
+            }
         }
     }
 
@@ -65,7 +65,10 @@ export default function PropertyDetails() {
                     {/* <Button variant="primary">Like</Button> */}
                     {isOwner && (
                         <div className="modify_btns">
-                            <Button variant="success">Edit</Button>
+                            <Button href={`/properties/details/${propertyId}/edit`} variant="success">
+                                Edit
+                            </Button>
+                            {/* <Button href= variant="success">Edit</Button> */}
                             <Button onClick={propertyDeleteHandler} variant="danger">Delete</Button>
                         </div>
                     )}

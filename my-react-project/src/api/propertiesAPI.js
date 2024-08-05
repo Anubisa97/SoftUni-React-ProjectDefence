@@ -16,3 +16,5 @@ export const createProperty = (propertyData) => request.post(BASE_URL, propertyD
 export const getOwned = (ownerId) => request.get(`${BASE_URL}/?where=_ownerId%3D%22${ownerId}%22&`);
 
 export const removeProperty = (propertyId) => request.del(`${BASE_URL}/${propertyId}`);
+
+export const updateProperty = (propertyId, propertyData) => request.put(`${BASE_URL}/${propertyId}`, propertyData)

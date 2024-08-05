@@ -13,6 +13,7 @@ import PropertyDetails from "./components/properties-list/property-details/Prope
 import Create from "./components/create/Create";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import MyProperties from "./components/my-properties/MyProperties";
+import EditProperty from "./components/edit-property/EditProperty";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/properties' element={<PropertiesList />} />
           <Route path='/properties/details/:propertyId' element={<PropertyDetails />} />
+          <Route path='/properties/details/:propertyId/edit' element={<EditProperty />} />
           <Route path='/about' element={<Home />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/contact-us' element={<ContactUs />} />
