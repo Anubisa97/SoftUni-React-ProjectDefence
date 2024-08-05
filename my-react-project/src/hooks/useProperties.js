@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { createProperty, getAll, getOne } from "../api/propertiesAPI";
+import { createProperty, getAll, getOne, getOwned } from "../api/propertiesAPI";
 
 export function useGetAllProperties() {
   const [properties, setProperties] = useState([]);
@@ -24,4 +24,13 @@ export function useCreateProperties() {
   const propertyCreateHandler = (propertyData) => createProperty(propertyData);
 
   return propertyCreateHandler;
+}
+
+export function useGetOwnerProperties(ownerId) {
+  const [property, setProperty] = useState([]);
+  useEffect(() => {
+    getOwned(ownerId).then((property) => setProperty(property));
+  }, []);
+
+  return [property, setProperty];
 }

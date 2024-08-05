@@ -307,14 +307,14 @@
 
   const data = fs__default["default"].existsSync("./data")
     ? fs__default["default"].readdirSync("./data").reduce((p, c) => {
-        const content = JSON.parse(fs__default["default"].readFileSync("./data/" + c));
-        const collection = c.slice(0, -5);
-        p[collection] = {};
-        for (let endpoint in content) {
-          p[collection][endpoint] = content[endpoint];
-        }
-        return p;
-      }, {})
+      const content = JSON.parse(fs__default["default"].readFileSync("./data/" + c));
+      const collection = c.slice(0, -5);
+      p[collection] = {};
+      for (let endpoint in content) {
+        p[collection][endpoint] = content[endpoint];
+      }
+      return p;
+    }, {})
     : {};
 
   const actions = {

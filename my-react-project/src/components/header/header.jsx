@@ -1,31 +1,32 @@
-
-
 import { useLocation, Link } from "react-router-dom";
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
-import Banner from '../banner/Banner';
+import Banner from "../banner/Banner";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Header() {
     const { isAuthenticated } = useContext(AuthContext);
 
-
     const { pathname: pathName } = useLocation();
-    const showBanner = pathName === "/"
+    const showBanner = pathName === "/";
 
     return (
         <div className="header_section">
-
-
             <div className="container-fluid">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <Link className="navbar-brand" to="/"><img src="images/logo.png" /></Link>
+                    <Link className="navbar-brand" to="/">
+                        <img src="images/logo.png" />
+                    </Link>
 
-                    <div className='mobile-nav'>
-                        <DropdownButton id="dropdown-basic-button" title="Menu" variant="Secondary">
+                    <div className="mobile-nav">
+                        <DropdownButton
+                            id="dropdown-basic-button"
+                            title="Menu"
+                            variant="Secondary"
+                        >
                             <Dropdown.Item href="/">Home</Dropdown.Item>
                             <Dropdown.Item href="/properties">Property</Dropdown.Item>
                             {/* <Dropdown.Item href="/about">About</Dropdown.Item> */}
@@ -33,22 +34,63 @@ export default function Header() {
                             <Dropdown.Item href="/blog">Blog</Dropdown.Item>
                             <Dropdown.Item href="/contact-us">Contact Us</Dropdown.Item>
                             <NavDropdown.Divider />
-                            {isAuthenticated ? (<div><Dropdown.Item href="/create"><i className="fa fa-pencil-square-o" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Add Offer</Dropdown.Item>
-                                <NavDropdown.Divider />
-                                <Dropdown.Item href="/logout"><i className="fa fa-sign-out" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Logout</Dropdown.Item></div>) : (<div><Dropdown.Item href="/login"><i className="fa fa-user" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Log in</Dropdown.Item>
-                                    <Dropdown.Item href="/register"><i className="fa fa-user" style={{ paddingRight: "5px" }} aria-hidden="true"></i>Register</Dropdown.Item></div>)}
-
-
+                            {isAuthenticated ? (
+                                <div>
+                                    <Dropdown.Item href="/create">
+                                        <i
+                                            className="fa fa-pencil-square-o"
+                                            style={{ paddingRight: "5px" }}
+                                            aria-hidden="true"
+                                        ></i>
+                                        Add Offer
+                                    </Dropdown.Item>
+                                    <NavDropdown.Divider />
+                                    <Dropdown.Item href="/logout">
+                                        <i
+                                            className="fa fa-sign-out"
+                                            style={{ paddingRight: "5px" }}
+                                            aria-hidden="true"
+                                        ></i>
+                                        Logout
+                                    </Dropdown.Item>
+                                </div>
+                            ) : (
+                                <div>
+                                    <Dropdown.Item href="/login">
+                                        <i
+                                            className="fa fa-user"
+                                            style={{ paddingRight: "5px" }}
+                                            aria-hidden="true"
+                                        ></i>
+                                        Log in
+                                    </Dropdown.Item>
+                                    <Dropdown.Item href="/register">
+                                        <i
+                                            className="fa fa-user"
+                                            style={{ paddingRight: "5px" }}
+                                            aria-hidden="true"
+                                        ></i>
+                                        Register
+                                    </Dropdown.Item>
+                                </div>
+                            )}
                         </DropdownButton>
                     </div>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-auto">
-
                             <li className={"nav-item" + (pathName === "/" && "active")}>
-                                <Link className="nav-link" to="/">Home</Link>
+                                <Link className="nav-link" to="/">
+                                    Home
+                                </Link>
                             </li>
-                            <li className={"nav-item" + (pathName === "/properties" && "active")}>
-                                <Link className="nav-link" to="/properties">Properties</Link>
+                            <li
+                                className={
+                                    "nav-item" + (pathName === "/properties" && "active")
+                                }
+                            >
+                                <Link className="nav-link" to="/properties">
+                                    Properties
+                                </Link>
                             </li>
                             {/* <li className="nav-item">
                                 <Link className="nav-link" to="/about">About</Link>
@@ -57,26 +99,76 @@ export default function Header() {
                                 <Link className="nav-link" to="testimonial.html">Testimonial</Link>
                             </li> */}
                             <li className={"nav-item" + (pathName === "/blog" && "active")}>
-                                <Link className="nav-link" to="/blog">Blog</Link>
+                                <Link className="nav-link" to="/blog">
+                                    Blog
+                                </Link>
                             </li>
-                            <li className={"nav-item" + (pathName === "/contact-us" && "active")}>
-                                <Link className="nav-link" to="/contact-us">Contact Us</Link>
+                            <li
+                                className={
+                                    "nav-item" + (pathName === "/contact-us" && "active")
+                                }
+                            >
+                                <Link className="nav-link" to="/contact-us">
+                                    Contact Us
+                                </Link>
                             </li>
                         </ul>
                         <form className="form-inline my-2 my-lg-0">
-                            {isAuthenticated ? (<div className="user-btn"> <span>
-                                <Link to="/create"><span className="user_icon"><i className="fa fa-pencil-square-o" aria-hidden="true"></i></span>Add Offer</Link>
-                            </span>
-                                <span>
-                                    <Link to="/logout"><span className="user_icon"><i className="fa fa-sign-out" aria-hidden="true"></i></span>Logout</Link>
-                                </span> </div>) : (<div className="user-btn"> <span>
-                                    <Link to="/login"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Log in</Link>
-                                </span>
+                            {isAuthenticated ? (
+                                <div className="user-btn">
+                                    {" "}
                                     <span>
-                                        <Link to="/register"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Register</Link>
-                                    </span> </div>)}
-
-
+                                        <Link to="/my-properties">
+                                            <span className="user_icon">
+                                                <i
+                                                    className="fa fa-pencil-square-o"
+                                                    aria-hidden="true"
+                                                ></i>
+                                            </span>
+                                            My Properties
+                                        </Link>
+                                    </span>
+                                    <span>
+                                        <Link to="/create">
+                                            <span className="user_icon">
+                                                <i
+                                                    className="fa fa-pencil-square-o"
+                                                    aria-hidden="true"
+                                                ></i>
+                                            </span>
+                                            Add Offer
+                                        </Link>
+                                    </span>
+                                    <span>
+                                        <Link to="/logout">
+                                            <span className="user_icon">
+                                                <i className="fa fa-sign-out" aria-hidden="true"></i>
+                                            </span>
+                                            Logout
+                                        </Link>
+                                    </span>{" "}
+                                </div>
+                            ) : (
+                                <div className="user-btn">
+                                    {" "}
+                                    <span>
+                                        <Link to="/login">
+                                            <span className="user_icon">
+                                                <i className="fa fa-user" aria-hidden="true"></i>
+                                            </span>
+                                            Log in
+                                        </Link>
+                                    </span>
+                                    <span>
+                                        <Link to="/register">
+                                            <span className="user_icon">
+                                                <i className="fa fa-user" aria-hidden="true"></i>
+                                            </span>
+                                            Register
+                                        </Link>
+                                    </span>{" "}
+                                </div>
+                            )}
                         </form>
                     </div>
                 </nav>
@@ -84,7 +176,6 @@ export default function Header() {
 
             {showBanner && <Banner />}
         </div>
-
     );
 }
 
@@ -101,4 +192,4 @@ export default function Header() {
 // Sort properties
 //
 //
-// 
+//

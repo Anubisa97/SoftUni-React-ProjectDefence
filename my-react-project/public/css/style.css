@@ -724,7 +724,7 @@ hr.border_main {
 }
 
 .modify_btns {
-    width: 30%;
+    width: 20%;
     display: flex;
     justify-content: space-between;
     padding: 15px 0px 10px 0px;

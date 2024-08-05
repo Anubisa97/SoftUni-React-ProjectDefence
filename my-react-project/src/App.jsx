@@ -12,6 +12,7 @@ import Logout from "./components/logout/Logout";
 import PropertyDetails from "./components/properties-list/property-details/PropertyDetails";
 import Create from "./components/create/Create";
 import { AuthContextProvider } from "./contexts/AuthContext";
+import MyProperties from "./components/my-properties/MyProperties";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path='/blog' element={<Blog />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/create' element={<Create />} />
+          <Route path='/my-properties' element={<MyProperties />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/logout' element={<Logout />} />

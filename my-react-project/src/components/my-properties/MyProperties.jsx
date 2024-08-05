@@ -1,8 +1,11 @@
-import PropertyCard from "./property-card/PropertyCard";
-import { useGetAllProperties } from "../../hooks/useProperties";
+import { useGetOwnerProperties } from "../../hooks/useProperties";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
+import PropertyCard from "../properties-list/property-card/PropertyCard";
 
-export default function PropertiesList() {
-    const [properties] = useGetAllProperties();
+export default function MyProperties() {
+    const { userId } = useContext(AuthContext);
+    const [properties] = useGetOwnerProperties(userId);
 
     return (
         <div className="Properties_section layout_padding">
@@ -10,7 +13,7 @@ export default function PropertiesList() {
                 <div className="row">
                     <div className="col-sm-12">
                         <div className="Properties_taital_main">
-                            <h1 className="Properties_taital">All Properties</h1>
+                            <h1 className="Properties_taital">New Properties for You</h1>
                             <hr className="border_main" />
                         </div>
                     </div>
