@@ -25,20 +25,8 @@ const initialValues = {
 export default function EditProperty() {
     const { propertyId } = useParams()
     const [property] = useGetOneProperty(propertyId)
-
     const navigate = useNavigate()
 
-    // const createProperty = useCreateProperties()
-
-    // const creteHandler = async (values) => {
-    //     try {
-    //         const { _id } = await createProperty(values)
-    //         navigate(`/properties/details/${_id}`)
-    //     } catch (error) {
-    //         // TODO: Set error state and display error
-    //         console.error(error);
-    //     }
-    // }
 
     const {
         values,

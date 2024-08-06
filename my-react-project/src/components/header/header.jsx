@@ -18,7 +18,7 @@ export default function Header() {
             <div className="container-fluid">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <Link className="navbar-brand" to="/">
-                        <img src="images/logo.png" />
+                        <img src="/images/logo.png" />
                     </Link>
 
                     <div className="mobile-nav">
@@ -28,7 +28,7 @@ export default function Header() {
                             variant="Secondary"
                         >
                             <Dropdown.Item href="/">Home</Dropdown.Item>
-                            <Dropdown.Item href="/properties">Property</Dropdown.Item>
+                            <Dropdown.Item href="/properties">Properties</Dropdown.Item>
                             {/* <Dropdown.Item href="/about">About</Dropdown.Item> */}
                             {/* <Dropdown.Item href="#/action-4">Testimonial</Dropdown.Item> */}
                             <Dropdown.Item href="/blog">Blog</Dropdown.Item>
@@ -36,6 +36,14 @@ export default function Header() {
                             <NavDropdown.Divider />
                             {isAuthenticated ? (
                                 <div>
+                                    <Dropdown.Item href="/my-properties">
+                                        <i
+                                            className="fa fa-list"
+                                            style={{ paddingRight: "5px" }}
+                                            aria-hidden="true"
+                                        ></i>
+                                        My Properties
+                                    </Dropdown.Item>
                                     <Dropdown.Item href="/create">
                                         <i
                                             className="fa fa-pencil-square-o"

@@ -20,7 +20,7 @@ export default function Blog() {
                         <div className="col-md-6">
                             <div className="blog_text_main">
                                 <p className="blog_text">Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using `&apos;`Content here, content here`&apos;`, making it look like readable English. Many desktop publishing packages and web</p>
-                                <div className="readmore_bt"><Link to="#">Read More</Link></div>
+                                <div className="readmore_bt"><Link to="/contact-us">Contact Us</Link></div>
                             </div>
                         </div>
                         <div className="col-md-6">
