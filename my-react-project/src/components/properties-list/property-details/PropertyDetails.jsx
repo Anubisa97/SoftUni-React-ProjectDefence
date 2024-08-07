@@ -5,7 +5,7 @@ import Button from "react-bootstrap/esm/Button";
 import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { removeProperty, updateProperty } from "../../../api/propertiesAPI";
-import SaveProperties from "../../save-properties/SaveProperties";
+// import SaveProperties from "../../save-properties/SaveProperties";
 
 export default function PropertyDetails() {
     const { isAuthenticated } = useContext(AuthContext);
