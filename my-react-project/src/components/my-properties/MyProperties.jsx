@@ -13,7 +13,7 @@ export default function MyProperties() {
                 <div className="row">
                     <div className="col-sm-12">
                         <div className="Properties_taital_main">
-                            <h1 className="Properties_taital">New Properties for You</h1>
+                            <h1 className="Properties_taital">My Properties</h1>
                             <hr className="border_main" />
                         </div>
                     </div>

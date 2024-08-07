@@ -31,7 +31,7 @@ export default function Header() {
                             <Dropdown.Item href="/properties">Properties</Dropdown.Item>
                             {/* <Dropdown.Item href="/about">About</Dropdown.Item> */}
                             {/* <Dropdown.Item href="#/action-4">Testimonial</Dropdown.Item> */}
-                            <Dropdown.Item href="/blog">Blog</Dropdown.Item>
+                            <Dropdown.Item href="/blog">Book</Dropdown.Item>
                             <Dropdown.Item href="/contact-us">Contact Us</Dropdown.Item>
                             <NavDropdown.Divider />
                             {isAuthenticated ? (
@@ -108,7 +108,7 @@ export default function Header() {
                             </li> */}
                             <li className={"nav-item" + (pathName === "/blog" && "active")}>
                                 <Link className="nav-link" to="/blog">
-                                    Blog
+                                    Book
                                 </Link>
                             </li>
                             <li
@@ -187,16 +187,12 @@ export default function Header() {
     );
 }
 
-// TODO Create property
-// Create latest properties list on home page
-// List all properties
-// Authentication
-// Edit and Delete properties
+// TODO
 // Route guard
+// 404 page
+// confirm deletion modal
 //
 // CAN DO
-// List user properties
-// List liked properties
 // Sort properties
 //
 //

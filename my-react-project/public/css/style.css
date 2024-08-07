@@ -724,9 +724,10 @@ hr.border_main {
 }
 
 .modify_btns {
-    width: 30%;
+    width: 20%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     padding: 15px 0px 10px 0px;
 }
 
@@ -881,13 +882,13 @@ hr.blog_border_main {
 .readmore_bt{
     width: 170px;
     float: left;
-    margin-top: 120px;
+    margin-top: 60px;
 }
 
 .readmore_bt a{
     width: 100%;
     float: left;
-    font-size: 16px;
+    font-size: 18px;
     color: #ffffff;
     background-color: #f9bc19;
     text-align: center;

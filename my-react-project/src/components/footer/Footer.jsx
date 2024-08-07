@@ -29,19 +29,20 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div> */}
-                <div className="row" style={{ justifyContent: "space-around" }}>
+                <div className="row" >
                     <div className="col-md-4">
                         <h3 className="footer_text">About Us</h3>
                         <p className="lorem_text">
                             At Upside, we specialize in providing exceptional real estate services, helping clients buy, sell, and rent properties with ease and confidence.</p>
                     </div>
-                    {/* <div className="col-md-4">
+                    <div className="col-md-4">
                         <h3 className="footer_text">Recent Properties</h3>
-                        <div className="image_main">
-                            <div className="image_10"><img src="images/img-10.png" /></div>
-                            <div className="image_10"><img src="images/img-10.png" /></div>
+                        <div className="image_main" style={{ paddingLeft: "60px" }}>
+                            <Link className="navbar-brand" to="/">
+                                <img src="/images/logo.png" />
+                            </Link>
                         </div>
-                    </div> */}
+                    </div>
                     <div className="col-md-4">
                         <h3 className="footer_text">Useful Links</h3>
                         <div className="footer_menu">

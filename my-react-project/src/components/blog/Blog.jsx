@@ -19,7 +19,7 @@ export default function Blog() {
                     <div className="row">
                         <div className="col-md-6">
                             <div className="blog_text_main">
-                                <p className="blog_text">Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using `&apos;`Content here, content here`&apos;`, making it look like readable English. Many desktop publishing packages and web</p>
+                                <p className="blog_text">Get in touch with our dedicated support team for any inquiries or assistance regarding our real estate services. We`&apos;`re here to help you every step of the way, ensuring a smooth and satisfying experience.</p>
                                 <div className="readmore_bt"><Link to="/contact-us">Contact Us</Link></div>
                             </div>
                         </div>
