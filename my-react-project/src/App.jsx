@@ -14,6 +14,8 @@ import Create from "./components/create/Create";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import MyProperties from "./components/my-properties/MyProperties";
 import EditProperty from "./components/edit-property/EditProperty";
+import RouterGuard from "./components/common/RouterGuard";
+import NotFound from "./components/not-found/NotFound";
 
 
 function App() {
@@ -27,16 +29,20 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/properties' element={<PropertiesList />} />
           <Route path='/properties/details/:propertyId' element={<PropertyDetails />} />
-          <Route path='/properties/details/:propertyId/edit' element={<EditProperty />} />
           <Route path='/about' element={<Home />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/contact-us' element={<ContactUs />} />
-          <Route path='/create' element={<Create />} />
-          <Route path='/my-properties' element={<MyProperties />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/logout' element={<Logout />} />
+          <Route element={<RouterGuard />}>
+            <Route path='/create' element={<Create />} />
+            <Route path='/properties/details/:propertyId/edit' element={<EditProperty />} />
+            <Route path='/my-properties' element={<MyProperties />} />
+            <Route path='/logout' element={<Logout />} />
+          </Route>
+          <Route path='*' element={<NotFound />} />
         </Routes>
+
         <Footer />
       </div>
     </AuthContextProvider>
