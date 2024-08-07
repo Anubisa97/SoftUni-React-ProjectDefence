@@ -731,6 +731,12 @@ hr.border_main {
     padding: 15px 0px 10px 0px;
 }
 
+.modify_btns_row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 .offer_icon {
     padding-right: 5px;
 }

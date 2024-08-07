@@ -20,3 +20,5 @@ export const getLatest = () => request.get(`${BASE_URL}?sortBy=_createdOn%20desc
 export const removeProperty = (propertyId) => request.del(`${BASE_URL}/${propertyId}`);
 
 export const updateProperty = (propertyId, propertyData) => request.put(`${BASE_URL}/${propertyId}`, propertyData);
+
+export const getSavedProperties = (userID) => request.get(`${BASE_URL}/?where=saved_from%3D%22${userID}%22&`);

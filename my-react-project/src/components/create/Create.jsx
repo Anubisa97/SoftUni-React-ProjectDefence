@@ -16,6 +16,7 @@ const initialValues = {
     street: '',
     area: '',
     price: '',
+    saved_from: [],
     number: '',
     img_url: '',
     description: '',

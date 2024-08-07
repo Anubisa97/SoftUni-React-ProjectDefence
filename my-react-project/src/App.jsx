@@ -16,6 +16,8 @@ import MyProperties from "./components/my-properties/MyProperties";
 import EditProperty from "./components/edit-property/EditProperty";
 import RouterGuard from "./components/common/RouterGuard";
 import NotFound from "./components/not-found/NotFound";
+import SavedProperties from "./components/saved-properties/SavedProperties";
+import SaveProperties from "./components/save-properties/SaveProperties";
 
 
 function App() {
@@ -34,11 +36,13 @@ function App() {
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/logout' element={<Logout />} />
           <Route element={<RouterGuard />}>
             <Route path='/create' element={<Create />} />
             <Route path='/properties/details/:propertyId/edit' element={<EditProperty />} />
             <Route path='/my-properties' element={<MyProperties />} />
-            <Route path='/logout' element={<Logout />} />
+            <Route path='/saved-properties' element={<SavedProperties />} />
+            <Route path='/save' element={<SaveProperties />} />
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>

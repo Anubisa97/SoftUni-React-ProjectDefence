@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { createProperty, getAll, getLatest, getOne, getOwned } from "../api/propertiesAPI";
+import { createProperty, getAll, getLatest, getOne, getOwned, getSavedProperties } from "../api/propertiesAPI";
 
 export function useGetAllProperties() {
   const [properties, setProperties] = useState([]);
@@ -40,6 +40,15 @@ export function useGetOwnerProperties(ownerId) {
   const [property, setProperty] = useState([]);
   useEffect(() => {
     getOwned(ownerId).then((property) => setProperty(property));
+  }, []);
+
+  return [property, setProperty];
+}
+
+export function useGetSavedProperties(userId) {
+  const [property, setProperty] = useState([]);
+  useEffect(() => {
+    getSavedProperties(userId).then((property) => setProperty(property));
   }, []);
 
   return [property, setProperty];

@@ -36,7 +36,6 @@ export default function Footer() {
                             At Upside, we specialize in providing exceptional real estate services, helping clients buy, sell, and rent properties with ease and confidence.</p>
                     </div>
                     <div className="col-md-4">
-                        <h3 className="footer_text">Recent Properties</h3>
                         <div className="image_main" style={{ paddingLeft: "60px" }}>
                             <Link className="navbar-brand" to="/">
                                 <img src="/images/logo.png" />
@@ -48,7 +47,7 @@ export default function Footer() {
                         <div className="footer_menu">
                             <ul>
                                 <li><Link to="/">Home</Link></li>
-                                <li><Link to="/blog">Blog</Link></li>
+                                <li><Link to="/blog">Book</Link></li>
                                 <li><Link to="/properties">Properties</Link></li>
                                 <li><Link to="contact-us">Contact Us</Link></li>
                             </ul>

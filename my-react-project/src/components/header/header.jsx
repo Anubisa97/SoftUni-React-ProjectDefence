@@ -36,6 +36,14 @@ export default function Header() {
                             <NavDropdown.Divider />
                             {isAuthenticated ? (
                                 <div>
+                                    <Dropdown.Item href="/saved-properties">
+                                        <i
+                                            className="fa fa-heart"
+                                            style={{ paddingRight: "5px" }}
+                                            aria-hidden="true"
+                                        ></i>
+                                        Saved
+                                    </Dropdown.Item>
                                     <Dropdown.Item href="/my-properties">
                                         <i
                                             className="fa fa-list"
@@ -126,10 +134,21 @@ export default function Header() {
                                 <div className="user-btn">
                                     {" "}
                                     <span>
+                                        <Link to="/saved-properties">
+                                            <span className="user_icon">
+                                                <i
+                                                    className="fa fa-heart"
+                                                    aria-hidden="true"
+                                                ></i>
+                                            </span>
+                                            Saved
+                                        </Link>
+                                    </span>
+                                    <span>
                                         <Link to="/my-properties">
                                             <span className="user_icon">
                                                 <i
-                                                    className="fa fa-pencil-square-o"
+                                                    className="fa fa-list"
                                                     aria-hidden="true"
                                                 ></i>
                                             </span>

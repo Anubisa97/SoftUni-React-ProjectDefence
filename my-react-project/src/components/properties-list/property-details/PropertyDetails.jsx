@@ -4,15 +4,18 @@ import { useGetOneProperty } from "../../../hooks/useProperties";
 import Button from "react-bootstrap/esm/Button";
 import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
-import { removeProperty } from "../../../api/propertiesAPI";
+import { removeProperty, updateProperty } from "../../../api/propertiesAPI";
+import SaveProperties from "../../save-properties/SaveProperties";
 
 export default function PropertyDetails() {
+    const { isAuthenticated } = useContext(AuthContext);
     const navigate = useNavigate()
     const { userId } = useContext(AuthContext);
     const { propertyId } = useParams();
     const [property] = useGetOneProperty(propertyId);
 
-    const isOwner = property._ownerId && property._ownerId === userId;
+    const hasSaved = property.saved_from?.includes(userId)
+    const isOwner = property._ownerId === userId;
 
     const propertyDeleteHandler = async () => {
         if (window.confirm("Please confirm if you want to delete the property")) {
@@ -25,6 +28,28 @@ export default function PropertyDetails() {
 
             }
         }
+    }
+
+    const propertySaveHandler = async () => {
+        // SaveProperties(userId, propertyId)
+
+
+        property.saved_from.push(userId)
+
+        await updateProperty(propertyId, property)
+
+        navigate(`/properties/details/${propertyId}`)
+    }
+
+    const propertyUnSaveHandler = async () => {
+        const userIdIndex = property.saved_from.indexOf(userId)
+
+        property.saved_from.splice(userIdIndex, 1)
+
+        await updateProperty(propertyId, property)
+
+        navigate(`/properties/details/${propertyId}`)
+
     }
 
     return (
@@ -61,17 +86,35 @@ export default function PropertyDetails() {
                         <h3 className="details_location">
                             <span>{property.description}</span>
                         </h3>
-                    </div>
-                    {/* <Button variant="primary">Like</Button> */}
-                    {isOwner && (
-                        <div className="modify_btns">
-                            <Button href={`/properties/details/${propertyId}/edit`} variant="success">
-                                Edit
-                            </Button>
-                            {/* <Button href= variant="success">Edit</Button> */}
-                            <Button onClick={propertyDeleteHandler} variant="danger">Delete</Button>
-                        </div>
-                    )}
+                    </div >
+                    {isAuthenticated && (<div className="modify_btns_row">
+                        {hasSaved || (
+                            <div className="modify_btns">
+                                <Button onClick={propertySaveHandler} variant="primary"><i
+                                    className="fa fa-heart"
+                                    aria-hidden="true"
+                                ></i> Save</Button>
+                            </div>
+                        )}
+                        {hasSaved && (
+                            <div className="modify_btns">
+                                <Button onClick={propertyUnSaveHandler} variant="danger"><i
+                                    className="fa fa-heart"
+                                    aria-hidden="true"
+                                ></i> Un Save</Button>
+                            </div>
+                        )}
+                        {isOwner && (
+                            <div className="modify_btns">
+                                <Button href={`/properties/details/${propertyId}/edit`} variant="success">
+                                    Edit
+                                </Button>
+
+                                <Button onClick={propertyDeleteHandler} variant="danger">Delete</Button>
+                            </div>
+                        )}
+                    </div>)}
+
                 </div>
             </div>
         </div>

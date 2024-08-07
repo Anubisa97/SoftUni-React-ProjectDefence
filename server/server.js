@@ -307,14 +307,14 @@
 
   const data = fs__default["default"].existsSync("./data")
     ? fs__default["default"].readdirSync("./data").reduce((p, c) => {
-      const content = JSON.parse(fs__default["default"].readFileSync("./data/" + c));
-      const collection = c.slice(0, -5);
-      p[collection] = {};
-      for (let endpoint in content) {
-        p[collection][endpoint] = content[endpoint];
-      }
-      return p;
-    }, {})
+        const content = JSON.parse(fs__default["default"].readFileSync("./data/" + c));
+        const collection = c.slice(0, -5);
+        p[collection] = {};
+        for (let endpoint in content) {
+          p[collection][endpoint] = content[endpoint];
+        }
+        return p;
+      }, {})
     : {};
 
   const actions = {
@@ -1321,6 +1321,7 @@
         street: "bul.Tsarigradsko shose",
         area: 180,
         price: 149000,
+        saved_from: [],
         number: "0885182045",
         img_url: "https://archello.s3.eu-central-1.amazonaws.com/images/2021/09/08/ab-partners-midtown-apartment--modern-interior-design-apartments-archello.1631083770.83.jpg",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore sint, ipsa suscipit perferendis omnis earum voluptates eligendi nesciunt cum in quae velit officia ipsam ducimus quaerat quam voluptatum! Sed, obcaecati. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem error alias incidunt, laborum quibusdam accusantium rerum velit sequi officiis doloremque repellendus vero molestias nesciunt placeat reiciendis ullam voluptas cumque magnam?",
@@ -1335,6 +1336,7 @@
         street: "bul.Slivnitsa",
         area: 95,
         price: 800,
+        saved_from: [],
         number: "0885182854",
         img_url: "https://www.decorilla.com/online-decorating/wp-content/uploads/2022/03/Modern-Office-Interior-with-Open-Floor-Plan-scaled.jpeg",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore sint, ipsa suscipit perferendis omnis earum voluptates eligendi nesciunt cum in quae velit officia ipsam ducimus quaerat quam voluptatum! Sed, obcaecati. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem error alias incidunt, laborum quibusdam accusantium rerum velit sequi officiis doloremque repellendus vero molestias nesciunt placeat reiciendis ullam voluptas cumque magnam?",
@@ -1350,6 +1352,7 @@
         street: "ul. Levski 1",
         area: "70",
         price: "130000",
+        saved_from: [],
         number: "088565166",
         img_url: "https://mladost-business-park-apartment-sofia.hotelmix.bg/data/Photos/OriginalPhoto/11069/1106996/1106996547/Mladost-Business-Park-Apartment-Sofia-Exterior.JPEG",
         description: "Apartment Mladost 1A is housed in a residential building 50 m from Mladost 3 metro station. It offers free WiFi. Borisova Garden is 5 km away. The apartment has 1 bedroom and a flat-screen TV. The kitchen is equipped with an oven, fridge and kettle. There are supermarkets, shopping centers and an IKEA chain store nearby. Car rental can also be provided. Sofia Airport is a 7-minute drive from Apartment Mladost 1A.",
