@@ -3,7 +3,7 @@ import { getAccessToken } from "../utils/authUtils";
 export default async function requester(method, url, data) {
   const options = {};
 
-  const accessToken = getAccessToken()
+  const accessToken = getAccessToken();
 
   if (accessToken) {
     options.headers = {
@@ -27,7 +27,7 @@ export default async function requester(method, url, data) {
 
   const response = await fetch(url, options);
   if (response.status === 204) {
-    return
+    return;
   }
   const result = await response.json();
 

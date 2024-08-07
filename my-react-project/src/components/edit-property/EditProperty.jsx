@@ -33,8 +33,8 @@ export default function EditProperty() {
         changeHandler,
         submitHandler,
     } = useForm(Object.assign(initialValues, property), async (values) => {
-        console.log(values);
         await updateProperty(propertyId, values)
+
         navigate(`/properties/details/${propertyId}`)
     });
 
